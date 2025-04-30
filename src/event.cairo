@@ -1,3 +1,4 @@
+// filepath: c:\Users\TCE HUB\Documents\flutter project\mine\adam_contract\src\events.cairo
 event TransactionEvent {
     account: felt,
     amount: u128,
