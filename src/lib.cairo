@@ -1,14 +1,9 @@
-// filepath: c:\Users\TCE HUB\Documents\flutter project\mine\adam_contract\src\tests.cairo
-use super::transaction::process_transaction;
+mod transaction;
+mod payroll;
+mod utils;
+mod event;
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn test_process_transaction() {
-        let transaction = process_transaction(123, 1000, 0);
-        assert(transaction.account == 123, 'Test failed: account mismatch');
-        assert(transaction.amount == 1000, 'Test failed: amount mismatch');
-        assert(transaction.category == 0, 'Test failed: category mismatch');
-        assert(transaction.status == 0, 'Test failed: status mismatch');
-    }
-}
+// Re-export commonly used items
+use transaction::process_transaction;
+use payroll::{add_employee, remove_employee, update_employee, execute_payment, batch_execute_payments};
+use utils::get_block_timestamp;
